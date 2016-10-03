@@ -1,4 +1,4 @@
-# VimVundle
+# Vim Vundle
 My Setup Vim using Vundle plugin manager
 
 #Installation
