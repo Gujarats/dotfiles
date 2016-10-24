@@ -1,3 +1,6 @@
+"this is for increament the alphabet a to b to c
+set nf=octal,hex,alpha
+
 "this is syntastic recommend setting
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
