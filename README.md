@@ -2,8 +2,8 @@
 My Setup Vim using Vundle plugin manager
 
 #Installation
-1. install vim vundle
-2. install solarized <a href="https://github.com/altercation/vim-colors-solarized"> here </a>
+1. install vim <a href="https://github.com/VundleVim/Vundle.vim"> vundle </a>
+2. install <a href="https://github.com/altercation/vim-colors-solarized"> solarized </a>
 
 #For YouCompleteme
 1. sudo apt-get install cmake
