@@ -1,7 +1,10 @@
-# Vim setup plugin using Vundle
-My Setup Vim using Vundle plugin manager
+# Vim setup editor setup using vim and tmux
+I used this setup for my daily usage
 
-#Installation
+#Installation tmux 
+I'm using ubuntu so to install type `sudo apt-get install tmux`
+
+#Installation vim and theme
 1. install vim [vundle](https://github.com/VundleVim/Vundle.vim) 
 2. install [solarized](https://github.com/altercation/vim-colors-solarized)
 3. create `.vimrc` file if haven't created `touch ~/.vimrc`, and copy paste my .vimrc file to yours
