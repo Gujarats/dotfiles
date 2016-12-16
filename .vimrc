@@ -1,4 +1,4 @@
-"vim-go setup 
+"vim-go setup sintaks highlighting
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
@@ -23,14 +23,34 @@ au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+"---- KEY BINDING VIMUX----
+ " Run the current file with rspec
+ map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
+
+ " Prompt for a command to run
+ map <Leader>vp :VimuxPromptCommand<CR>
+
+ " Run last command executed by VimuxRunCommand
+ map <Leader>vl :VimuxRunLastCommand<CR>
+
+ " Inspect runner pane
+ map <Leader>vi :VimuxInspectRunner<CR>
+
+ " Close vim tmux runner opened by VimuxRunCommand
+ map <Leader>vq :VimuxCloseRunner<CR>
+
+ " Interrupt any command running in the runner pane
+ map <Leader>vx :VimuxInterruptRunner<CR>
+
+ " Zoom the runner pane (use <bind-key> z to restore runner pane)
+ map <Leader>vz :call VimuxZoomRunner()<CR>
 
 "set tags for ctags;  this is for go to declared method 
 set tags=./tags;/
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 "this is for increament the alphabet a to b to c
 set nf=octal,hex,alpha
+
 "this is syntastic recommend setting
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -55,19 +75,38 @@ Plugin 'VundleVim/Vundle.vim'
 
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-Plugin 'L9'
+"Plugin 'L9'
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'valloric/youcompleteme'
+"Plugin 'valloric/youcompleteme'
 "Plugin 'xsbeats/vim-blade'
 Plugin 'yggdroot/indentline'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
 Plugin 'fatih/vim-go'
+Plugin 'vim-airline/vim-airline' " fancy statusline
+Plugin 'vim-airline/vim-airline-themes' " themes for vim-airline
+"Plugin 'benmills/vimux'
+
+Plugin 'chriskempson/base16-vim' "theme color
+
+" html / templates
+Plugin 'mattn/emmet-vim', { 'for': 'html' } " emmet support for vim - easily create markdup wth CSS-like syntax
+Plugin 'gregsexton/MatchTag', { 'for': 'html' } " match tags in html, similar to paren support
+Plugin 'othree/html5.vim', { 'for': 'html' } " html5 support
+Plugin 'mustache/vim-mustache-handlebars' " mustach support
+Plugin 'digitaltoad/vim-jade', { 'for': ['jade', 'pug'] } " jade support
+
+" JavaScript
+Plugin 'gavocanov/vim-js-indent', { 'for': 'javascript' } " JavaScript indent support
+Plugin 'moll/vim-node', { 'for': 'javascript' } " node support
+Plugin 'othree/yajs.vim', { 'for': 'javascript' } " JavaScript syntax plugin
+Plugin 'othree/es.next.syntax.vim', { 'for': 'javascript' } " ES6 and beyond syntax
+Plugin 'mxw/vim-jsx', { 'for': ['jsx', 'javascript'] } " JSX support
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -155,10 +194,17 @@ set tm=500
 "
 syntax on
 let g:solarized_termcolors=256
-"let g:molokai_original = 1
+let g:molokai_original = 1
 set t_Co=256 
 set background=dark
-colorscheme solarized 
+"colorscheme solarized 
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
+
 
 " Display line numbers
 set number
