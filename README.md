@@ -13,7 +13,7 @@ I'm using ubuntu so to install type `sudo apt-get install tmux`
 #For YouCompleteme
 1. sudo apt-get install cmake
 2. sudo apt-get install python-dev
-3. ./install.py
+3. ./install.py --clang-completer
 
 #Environtment Development
 I used this setup for my daily activity work. these are the language that used `go` , `perl` , `javascript` , `php`
