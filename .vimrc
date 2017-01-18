@@ -1,3 +1,11 @@
+"showing hidden files
+let NERDTreeShowHidden=1
+
+set ruler         " show the cursor position all the time
+
+"make vim-airline shows up when open single file
+set laststatus=2
+
 "vim-go setup sintaks highlighting
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -5,6 +13,10 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
+"highlight cusor
+set cursorline
+set cursorcolumn
 
 "using sintastic with vim-go
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
@@ -19,31 +31,13 @@ au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
+"auto-import go
+let g:go_fmt_command = "goimports"
+
 "let vim to use ag
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
-"---- KEY BINDING VIMUX----
- " Run the current file with rspec
- map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
-
- " Prompt for a command to run
- map <Leader>vp :VimuxPromptCommand<CR>
-
- " Run last command executed by VimuxRunCommand
- map <Leader>vl :VimuxRunLastCommand<CR>
-
- " Inspect runner pane
- map <Leader>vi :VimuxInspectRunner<CR>
-
- " Close vim tmux runner opened by VimuxRunCommand
- map <Leader>vq :VimuxCloseRunner<CR>
-
- " Interrupt any command running in the runner pane
- map <Leader>vx :VimuxInterruptRunner<CR>
-
- " Zoom the runner pane (use <bind-key> z to restore runner pane)
- map <Leader>vz :call VimuxZoomRunner()<CR>
 
 "set tags for ctags;  this is for go to declared method 
 set tags=./tags;/
@@ -75,22 +69,18 @@ Plugin 'VundleVim/Vundle.vim'
 
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-"Plugin 'L9'
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-"Plugin 'scrooloose/syntastic'
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'valloric/youcompleteme'
-"Plugin 'xsbeats/vim-blade'
+Plugin 'valloric/youcompleteme'
 Plugin 'yggdroot/indentline'
 Plugin 'jiangmiao/auto-pairs'
-"Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
 Plugin 'fatih/vim-go'
-Plugin 'vim-airline/vim-airline' " fancy statusline
+
+"fancy statusline
 Plugin 'vim-airline/vim-airline-themes' " themes for vim-airline
-"Plugin 'benmills/vimux'
+Plugin 'vim-airline/vim-airline' 
 
 Plugin 'chriskempson/base16-vim' "theme color
 
