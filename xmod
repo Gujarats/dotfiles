@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+xmodmap ~/.Xmodmap
+
+echo "switch alt with ctrl"
