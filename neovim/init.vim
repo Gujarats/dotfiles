@@ -2,8 +2,6 @@
 "Quick command in insert mode
 "================================================================================================
 inoremap AA <Esc>A
-inoremap OO <Esc>o
-inoremap PP <Esc>pA
 
 "upper case 
 imap UU _<Esc>mza<C-Right><Esc>bgUiw`zi<Del>
@@ -25,22 +23,7 @@ map <F2> :NERDTreeToggle<CR>
 "shorcut for open new terminal
 map <F3> :VTerm<CR>
 "================================================================================================
-
-"showing hidden files
-let NERDTreeShowHidden=1
-
-set ruler         " show the cursor position all the time
-
-"make vim-airline shows up when open single file
-set laststatus=2
-
-"python 
-let g:python_host_prog  = '/usr/bin/python'
-
-"highlight cusor
-set cursorline
-set cursorcolumn
-
+"================================================================================================
 
 "================================================================================================
 "PHP CONFIGUARATION
@@ -52,7 +35,7 @@ map <F5> :!php -l %<CR>
 " A standard type: PEAR, PHPCS, PSR1, PSR2, Squiz and Zend
 let g:phpfmt_standard = 'PSR2'
 let g:phpfmt_command = '/usr/bin/phpcbf'
-let g:phpfmt_tmp_dir = '/tmp/php_fmt'
+let g:phpfmt_tmp_dir = '/tmp/phpcbf_fold'
 
 " Don't run messdetector on save (default = 1)
 let g:phpqa_messdetector_autorun = 0
@@ -63,6 +46,9 @@ let g:phpqa_codesniffer_autorun = 0
 "key map vphpw PHPWRAPER
 let g:vphpw_use_default_mapping = 1
 let b:vphpw_use_default_mapping = 1
+
+"dont run php auto format on save instead using :PhpFmt
+let g:phpfmt_autosave = 0
 
 "auto import use class
 function! IPhpInsertUse()
@@ -105,33 +91,9 @@ let g:go_highlight_build_constraints = 1
 "================================================================================================
 "================================================================================================
 
-
-"let vim to use ag
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
-"set tags for ctags;  this is for go to declared method 
-set tags=./tags;/
-
-"this is for increament the alphabet a to b to c
-set nf=octal,hex,alpha
-
-"this is syntastic recommend setting
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-"for copy paste from vim to clipboard 
-set clipboard=unnamedplus
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
+"================================================================================================
+"VUNDLE CONFIGURATION & PLUGINS
+"================================================================================================
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -161,10 +123,9 @@ Plugin 'nsf/gocode', {'rtp': 'nvim/'}
 Plugin 'gujarats/split-term.vim'
 
 "PHP LANGUAGE
-Plugin 'StanAngeloff/php.vim'
-"Plugin 'joonty/vim-phpqa.git'
-Bundle 'joonty/vim-phpqa.git'
-Plugin 'beanworks/vim-phpfmt'
+Plugin 'StanAngeloff/php.vim' "sintaks highlighting
+Plugin 'joonty/vim-phpqa.git' "Check sintaks error and in phpcs phpms
+Plugin 'beanworks/vim-phpfmt' "auto format the coding writings standard
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'diepm/vim-php-wrapper'
 Bundle 'arnaud-lb/vim-php-namespace'
@@ -192,8 +153,51 @@ Plugin 'chriskempson/base16-vim' "theme color
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+"================================================================================================
+"================================================================================================
 
 
+"let vim to use ag
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+"set tags for ctags;  this is for go to declared method 
+set tags=./tags;/
+
+"this is for increament the alphabet a to b to c
+set nf=octal,hex,alpha
+
+"this is syntastic recommend setting
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"for copy paste from vim to clipboard 
+set clipboard=unnamedplus
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+
+"showing hidden files
+let NERDTreeShowHidden=1
+
+set ruler         " show the cursor position all the time
+
+"make vim-airline shows up when open single file
+set laststatus=2
+
+"python 
+let g:python_host_prog  = '/usr/bin/python'
+
+"highlight cusor
+set cursorline
+set cursorcolumn
 
 set history=700
 
