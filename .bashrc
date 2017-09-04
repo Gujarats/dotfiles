@@ -134,8 +134,27 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#export path for laravel
-export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+#list local user
+alias list_users='cut -d: -f1 /etc/passwd'
 
-# change behavior of the terminal 
-# TERM=linux; export TERM
+#export path 
+export PATH="$PATH:$HOME/.config/composer/vendor/bin:$GOPATH/bin"
+export PATH="$PATH:$HOME/nsq-1.0.0/bin"
+
+#golang path environtment
+export GOPATH=/home/gujarat/golang
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+
+# docker magento cli
+alias magento='/home/gujarat/php/fabelio/fabelio2/html/bin/magento'
+
+#phpstorm
+alias phpstorm='~/php-storm/bin/phpstorm.sh'
+
+#give user permission
+alias perm='sudo chown -R gujarat:www-data .'
+
+#go to bash magento2 inside docker
+alias bashm2='docker exec -it phpfpm bash'
