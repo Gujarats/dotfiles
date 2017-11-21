@@ -2,10 +2,11 @@
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-#JAVA_HOME=/usr/bin/java
-#export JAVA_HOME
-#PATH=$PATH:$JAVA_HOME
-#export PATH
+JAVA_HOME=/home/gujarat/jdk-1.8/bin
+export JAVA_HOME
+PATH=$PATH:$JAVA_HOME
+export PATH
+
 PROMPT_DIRTRIM=3
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -146,10 +147,6 @@ export GOPATH=/home/gujarat/golang
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-
-# docker magento cli
-alias magento='/home/gujarat/php/fabelio/fabelio2/html/bin/magento'
-
 #phpstorm
 alias phpstorm='~/php-storm/bin/phpstorm.sh'
 
@@ -158,3 +155,21 @@ alias perm='sudo chown -R gujarat:www-data .'
 
 #go to bash magento2 inside docker
 alias bashm2='docker exec -it phpfpm bash'
+alias mysqlm2='docker exec -it mysql-docker bash'
+alias m2compile='docker exec -i phpfpm magento setup:di:compile'
+alias m2upgrade='docker exec -i phpfpm magento setup:upgrade'
+alias m2cache-flush='docker exec -i phpfpm magento cache:flush'
+alias m2modules='docker exec -i phpfpm magento module:status'
+alias m2debug='docker exec -i phpfpm cat var/log/debug.log'
+alias m2debug-clear='docker exec -i phpfpm echo '' > /var/www/html/var/log/debug.log'
+
+#moving file with include with hidden
+shopt -s dotglob
+
+#run android studio
+alias android='./android-studio/bin/studio.sh'
+
+#databases
+alias mongo-docker='docker exec -it mongo-docker mongo'
+alias mysql-docker='docker exec -it mysql-magento-docker mysql -umagento2 -pmagento2'
+alias redis-docker='docker exec -it redis-docker redis-cli'
