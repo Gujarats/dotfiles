@@ -154,6 +154,9 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 #phpstorm
 alias phpstorm='~/php-storm/bin/phpstorm.sh'
 
+#idea java
+alias idea='/usr/local/bin/idea >/dev/null 2>&1 &'
+
 #give user permission
 alias perm='sudo chown -R gujarat:www-data .'
 
