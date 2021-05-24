@@ -18,4 +18,11 @@ I'm using ubuntu so to install type `sudo apt-get install tmux`
 ## Environtment Development
 I used this setup for my daily activity work. these are the language that used `go` , `perl` , `javascript` , `php`
 
+## setup NVIM for .vimrc
+ - copy-paste .vimrc to your home dir
+ - copy-paste nvim/init.vim to ~/.config/nvim/
+ - source ~/.vimrc
+ - :PluginInstall
+ - this should be sufficient to be editor
+
 NOTE :  Tested on Ubuntu 16.04

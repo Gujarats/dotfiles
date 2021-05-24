@@ -180,3 +180,15 @@ alias android='./android-studio/bin/studio.sh'
 alias mongo-docker='docker exec -it mongo-docker mongo'
 alias mysql-docker='docker exec -it mysql-magento-docker mysql -umagento2 -pmagento2'
 alias redis-docker='docker exec -it redis-docker redis-cli'
+
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:~/.aws-google-auth/bin
+export PATH=$PATH:~/.awsudo/bin
+
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
+# traveloka
+alias saml='aws-google-auth --profile saml'
+alias tdev='awsudo -u xxt-dev-admin -- terraform'
+alias tstagin='awsudo -u xxt-stg-admin -- terraform'
+alias tprod='awsudo -u xxt-prod_deployer -- terraform'
