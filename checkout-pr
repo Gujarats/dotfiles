@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+if [ -z "$1" ]
+then
+    echo "pull request should not be null"
+    exit 255
+fi
+pr_id="$1"
+git branch -D pull-request
+git fetch origin pull/$pr_id/head:pull-request
