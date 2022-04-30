@@ -149,6 +149,9 @@ Plugin 'yggdroot/indentline'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mileszs/ack.vim'
 
+" terraform
+Plugin 'hashivim/vim-terraform'
+
 "GO Language
 Plugin 'fatih/vim-go'
 Plugin 'nsf/gocode', {'rtp': 'nvim/'}
