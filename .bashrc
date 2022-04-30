@@ -192,3 +192,10 @@ alias saml='aws-google-auth --profile saml'
 alias tdev='awsudo -u xxt-dev-admin -- terraform'
 alias tstagin='awsudo -u xxt-stg-admin -- terraform'
 alias tprod='awsudo -u xxt-prod_deployer -- terraform'
+
+alias ssmstginstances="awsudo -u usr-stg_deployer -- aws ec2 describe-instances --output table --query 'Reservations[].Instances[].[Tags[?Key==\`Name\`] | [0].Value, State.Name, InstanceId, ImageId]'"
+alias ssmprodinstances="awsudo -u usr-prod_admin -- aws ec2 describe-instances --output table --query 'Reservations[].Instances[].[Tags[?Key==\`Name\`] | [0].Value, State.Name, InstanceId, ImageId]'"
+
+
+alias ssmstg='awsudo -u usr-stg_deployer -- aws ssm start-session --target '
+alias ssmprod='awsudo -u usr-prod_admin -- aws ssm start-session --target '
