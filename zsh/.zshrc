@@ -82,6 +82,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# homebrew
+"$(/opt/homebrew/bin/brew shellenv)"
+
 # personal alias 
 alias ll='ls -la'
 #list local user
