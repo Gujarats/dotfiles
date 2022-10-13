@@ -10,6 +10,9 @@ imap uu _<Esc>mza<C-Right><Esc>bg~iw`zi<Del>
 "delete previous word
 imap <leader>d _<Esc>vbdi
 
+" copy paste with new lin
+:nmap p :pu<CR>
+
 "================================================================================================
 "Quick command
 "================================================================================================
