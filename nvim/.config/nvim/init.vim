@@ -105,6 +105,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " plugin on GitHub repo
+Plugin 'folke/tokyonight.nvim' 
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -113,7 +114,6 @@ Plugin 'yggdroot/indentline'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mileszs/ack.vim'
 Plugin 'sainnhe/gruvbox-material' "theme color
-Plugin 'folke/tokyonight.nvim' 
 
 "GO Language
 Plugin 'fatih/vim-go'

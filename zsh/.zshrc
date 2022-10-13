@@ -10,11 +10,6 @@ fi
 export NVM_DIR=${HOME}/.nvm
 export NVM_COMPLETION=true
 
-source ${HOME}/.zsh_plugins.sh
-
-# Bundle zsh plugins via antibody
-alias update-antibody='antibody bundle < $HOME/.zsh_plugins.txt > $HOME/.zsh_plugins.sh'
-
 # DIRCOLORS (MacOS)
 export CLICOLOR=1
 
@@ -36,7 +31,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# >>> conda initialize >>>
+# >>> conda initialize >>> python versrion manager
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/gujaratsantana/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
@@ -50,6 +45,16 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+#
+
+# >>> Terminal theme begin <<< 
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+# Theme terminal
+ZSH_THEME="af-magic"
+# plugin
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
 
 # personal alias 
 alias ll='ls -la'
