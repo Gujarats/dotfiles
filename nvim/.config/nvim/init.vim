@@ -110,6 +110,7 @@ Plugin 'yggdroot/indentline'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mileszs/ack.vim'
 Plugin 'sainnhe/gruvbox-material' "theme color
+Plugin 'folke/tokyonight.nvim' 
 
 "GO Language
 Plugin 'fatih/vim-go'
@@ -268,7 +269,6 @@ colorscheme tokyonight
 " Display line numbers
 set number
 set numberwidth=1
-set relativenumber
 
 " Utf8 standard encoding
 set encoding=utf8

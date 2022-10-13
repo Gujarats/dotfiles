@@ -21,10 +21,10 @@ nix-env -iA \
 	nixpkgs.direnv
 
 # stow dotfiles
-stow git
 stow nvim
 stow tmux
 stow zsh
+stow kitty
 
 # add zsh as a login shell
 command -v zsh | sudo tee -a /etc/shells
