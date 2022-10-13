@@ -106,10 +106,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'valloric/youcompleteme'
 Plugin 'yggdroot/indentline'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mileszs/ack.vim'
+Plugin 'sainnhe/gruvbox-material' "theme color
 
 "GO Language
 Plugin 'fatih/vim-go'
@@ -126,15 +126,12 @@ Plugin 'gujarats/split-term.vim'
 Plugin 'StanAngeloff/php.vim' "sintaks highlighting
 Plugin 'joonty/vim-phpqa.git' "Check sintaks error and in phpcs phpms
 Plugin 'beanworks/vim-phpfmt' "auto format the coding writings standard
-Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'diepm/vim-php-wrapper'
 Bundle 'arnaud-lb/vim-php-namespace'
 
 "fancy statusline
 Plugin 'vim-airline/vim-airline-themes' " themes for vim-airline
 Plugin 'vim-airline/vim-airline' 
-
-Plugin 'chriskempson/base16-vim' "theme color
 
 " html / templates
 "Plugin 'mattn/emmet-vim', { 'for': 'html' } " emmet support for vim - easily create markdup wth CSS-like syntax
@@ -269,14 +266,6 @@ let g:solarized_termcolors=256
 let g:molokai_original = 1
 set t_Co=256 
 set background=dark
-"colorscheme solarized 
-
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-
-
 
 " Display line numbers
 set number
