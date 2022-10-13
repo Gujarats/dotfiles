@@ -262,13 +262,13 @@ set tm=500
 " Colors & Fonts
 "
 syntax on
-let g:solarized_termcolors=256
-let g:molokai_original = 1
-set t_Co=256 
 set background=dark
+colorscheme tokyonight
 
 " Display line numbers
 set number
+set numberwidth=1
+set relativenumber
 
 " Utf8 standard encoding
 set encoding=utf8
@@ -276,10 +276,11 @@ set encoding=utf8
 "
 " Files, backup & undo
 "
-
 set nobackup
 set nowb
 set noswapfile
+set undodir=~/.config/nvim/undodir
+set undofile
 
 "
 " Text, tab & indentation
