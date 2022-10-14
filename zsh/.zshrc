@@ -56,6 +56,12 @@ ZSH_THEME="af-magic"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
+# adding all executable installed from nix 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.nix-profile/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 # personal alias 
 alias ll='ls -la'
 #list local user

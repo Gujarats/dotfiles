@@ -25,7 +25,6 @@ stow nvim
 stow p10k
 stow switchControl
 stow tmux
-stow zsh
 
 # add zsh as a login shell
 command -v zsh | sudo tee -a /etc/shells
@@ -35,6 +34,7 @@ sudo chsh -s $(which zsh) $USER
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+stow zsh
 
 
 # install vundle nvim plugin manager
