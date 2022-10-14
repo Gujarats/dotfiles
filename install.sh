@@ -53,5 +53,10 @@ sudo apt install apt-transport-https
 sudo apt update
 # install visual code studio
 sudo apt install code # or code-insiders
-# >>> visual code studio end<<<
+# >>> visual code studio ent<<<
 
+# >>> begin gvm <<<
+# instllaing golang
+bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+# visit this site for more requirement https://github.com/moovweb/gvm
+# >>> end gvm <<<
