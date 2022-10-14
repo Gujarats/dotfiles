@@ -33,11 +33,12 @@ command -v zsh | sudo tee -a /etc/shells
 # use zsh as default shell
 sudo chsh -s $(which zsh) $USER
 
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
 # install vundle nvim plugin manager
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
-
-# install neovim plugins
-nvim --headless +PlugInstall +qall
 
 # Use kitty terminal on MacOS
 [ `uname -s` = 'Darwin' ] && stow kitty
