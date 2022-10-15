@@ -248,4 +248,3 @@ set si
 " Wrap long lines
 set wrap
 
-set noshowcmd
