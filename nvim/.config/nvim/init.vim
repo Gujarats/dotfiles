@@ -28,42 +28,6 @@ map <F3> :VTerm<CR>
 "================================================================================================
 "================================================================================================
 
-"================================================================================================
-"PHP CONFIGUARATION
-"================================================================================================
-"
-"php sintax checking
-map <F5> :!php -l %<CR>
-
-" A standard type: PEAR, PHPCS, PSR1, PSR2, Squiz and Zend
-let g:phpfmt_standard = 'PSR2'
-let g:phpfmt_command = '/usr/bin/phpcbf'
-let g:phpfmt_tmp_dir = '/tmp/phpcbf_fold'
-
-" Don't run messdetector on save (default = 1)
-let g:phpqa_messdetector_autorun = 0
-
-" Don't run codesniffer on save (default = 1)
-let g:phpqa_codesniffer_autorun = 0
-
-"key map vphpw PHPWRAPER
-let g:vphpw_use_default_mapping = 1
-let b:vphpw_use_default_mapping = 1
-
-"dont run php auto format on save instead using :PhpFmt
-let g:phpfmt_autosave = 0
-
-"auto import use class
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-autocmd FileType php inoremap <Leader>i <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>i :call PhpInsertUse()<CR>
-
-
-"================================================================================================
-"================================================================================================
 
 "================================================================================================
 "GO CONFIGURATION
@@ -105,6 +69,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " plugin on GitHub repo
+Plugin 'morhetz/gruvbox'
 Plugin 'folke/tokyonight.nvim' 
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
@@ -115,41 +80,17 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'mileszs/ack.vim'
 Plugin 'sainnhe/gruvbox-material' "theme color
 
+
 "GO Language
 Plugin 'fatih/vim-go'
 Plugin 'nsf/gocode', {'rtp': 'nvim/'}
 
-"tags
-"Plugin 'xolox/vim-misc'
-"Plugin 'xolox/vim-easytags'
-
 "terminal
 Plugin 'gujarats/split-term.vim'
-
-"PHP LANGUAGE
-Plugin 'StanAngeloff/php.vim' "sintaks highlighting
-Plugin 'joonty/vim-phpqa.git' "Check sintaks error and in phpcs phpms
-Plugin 'beanworks/vim-phpfmt' "auto format the coding writings standard
-Plugin 'diepm/vim-php-wrapper'
-Bundle 'arnaud-lb/vim-php-namespace'
 
 "fancy statusline
 Plugin 'vim-airline/vim-airline-themes' " themes for vim-airline
 Plugin 'vim-airline/vim-airline' 
-
-" html / templates
-"Plugin 'mattn/emmet-vim', { 'for': 'html' } " emmet support for vim - easily create markdup wth CSS-like syntax
-"Plugin 'gregsexton/MatchTag', { 'for': 'html' } " match tags in html, similar to paren support
-"Plugin 'othree/html5.vim', { 'for': 'html' } " html5 support
-"Plugin 'mustache/vim-mustache-handlebars' " mustach support
-"Plugin 'digitaltoad/vim-jade', { 'for': ['jade', 'pug'] } " jade support
-
-" JavaScript
-"Plugin 'gavocanov/vim-js-indent', { 'for': 'javascript' } " JavaScript indent support
-"Plugin 'moll/vim-node', { 'for': 'javascript' } " node support
-"Plugin 'othree/yajs.vim', { 'for': 'javascript' } " JavaScript syntax plugin
-"Plugin 'othree/es.next.syntax.vim', { 'for': 'javascript' } " ES6 and beyond syntax
-"Plugin 'mxw/vim-jsx', { 'for': ['jsx', 'javascript'] } " JSX support
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -267,7 +208,7 @@ set tm=500
 "
 syntax on
 set background=dark
-colorscheme tokyonight
+colorscheme gruvbox
 
 " Display line numbers
 set number

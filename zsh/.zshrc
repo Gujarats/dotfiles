@@ -35,7 +35,7 @@ export NVM_DIR="$HOME/.nvm"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # Theme terminal
-ZSH_THEME="af-magic"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 # plugin
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
