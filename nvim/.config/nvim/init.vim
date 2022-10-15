@@ -15,11 +15,12 @@ imap <leader>d _<Esc>vbdi
 " copy from the end of the line
 :nmap Y $v^y
 
-" changing between pane
+" changing between pane due due MacOs Command key
 :nmap <leader>d <C-w>j
 :nmap <leader>a <C-w>h
 :nmap <leader>s <C-w>k
 :nmap <leader>f <C-w>l
+:nmap <leader>v <C-v>
 
 
 "================================================================================================
@@ -138,17 +139,11 @@ filetype off                  " required
 "showing hidden files
 let NERDTreeShowHidden=1
 
-set ruler         " show the cursor position all the time
-
 "make vim-airline shows up when open single file
 set laststatus=2
 
 "python 
 let g:python_host_prog  = '/usr/bin/python'
-
-"highlight cusor
-set cursorline
-set cursorcolumn
 
 set history=700
 
@@ -169,21 +164,12 @@ set so=7
 " Turn on wild menu
 set wildmenu
 
-
-" Show current position
-set ruler
-
 " Command bar height
 set cmdheight=2
 
 " Configure backspace
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
-
-" Enable mouse
-if has('mouse')
-  set mouse=a
-endif
 
 " Ignore case when searching
 set ignorecase
@@ -261,3 +247,5 @@ set si
 
 " Wrap long lines
 set wrap
+
+set noshowcmd
