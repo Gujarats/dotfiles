@@ -10,13 +10,17 @@ imap uu _<Esc>mza<C-Right><Esc>bg~iw`zi<Del>
 "delete previous word
 imap <leader>d _<Esc>vbdi
 
-" copy paste with new lin
+" copy paste with new line
 :nmap p :pu<CR>
+" copy from the end of the line
+:nmap Y v^y
 
+" changing between pane
 :nmap <leader>d <C-w>j
 :nmap <leader>a <C-w>h
 :nmap <leader>s <C-w>k
 :nmap <leader>f <C-w>l
+
 
 "================================================================================================
 "Quick command
