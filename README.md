@@ -2,6 +2,7 @@
 I used this setup for my daily usage
 
 ## Installation 
+reference : https://nixos.org
 just run `install.sh` and make sure everything is run smoothly
 
 ## For YouCompleteme

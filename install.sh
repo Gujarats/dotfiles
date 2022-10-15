@@ -43,18 +43,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vund
 # Use kitty terminal on MacOS
 [ `uname -s` = 'Darwin' ] && stow kitty
 
-# >>> visual code studio begin <<<
-sudo apt-get install wget gpg
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-rm -f packages.microsoft.gpg
-sudo apt install apt-transport-https
-sudo apt update
-# install visual code studio
-sudo apt install code # or code-insiders
-# >>> visual code studio ent<<<
-
 # >>> begin gvm <<<
 # instllaing golang
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
