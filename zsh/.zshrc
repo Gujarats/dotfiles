@@ -46,10 +46,13 @@ if [ -d "$HOME/.nix-profile/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# personal alias 
+# >>> personal alias <<<
 alias ll='ls -la'
 #list local user
 alias list_users='cut -d: -f1 /etc/passwd'
+alias pret='git log --pretty=oneline'
+alias pret-guj='git log --pretty=oneline --author=gujarat'
+
 
 # traveloka alias
 alias saml='aws-google-auth --profile saml'
