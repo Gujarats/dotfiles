@@ -13,7 +13,7 @@ imap <leader>d _<Esc>vbdi
 " copy paste with new line
 :nmap p :pu<CR>
 " copy from the end of the line
-:nmap Y v^y
+:nmap Y $v^y
 
 " changing between pane
 :nmap <leader>d <C-w>j
