@@ -19,13 +19,12 @@ nix-env -iA \
 	nixpkgs.bat \
 	nixpkgs.gnumake \
 	nixpkgs.gcc \
-	nixpkgs.direnv
+	nixpkgs.direnv \
     nixpkgs.nodePackages.npm
 
 # stow dotfiles
 stow kitty
 stow nvim
-stow p10k
 stow switchControl
 
 # add zsh as a login shell
@@ -34,11 +33,18 @@ command -v zsh | sudo tee -a /etc/shells
 # use zsh as default shell
 sudo chsh -s $(which zsh) $USER
 
+# install p10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+stow p10k
+
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-rm -rf ~/.zshrc
-rm -rf ~/.zshrc_plugins.txt
-stow zsh
+
+# symlink zsh
+rm -rf ~/.zshrc || true
+rm -rf ~/.zshrc_plugins.txt || true
+stow zsh || true
+source ~/.zshrc || true
 
 # install tmux plugin manager and its config
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
