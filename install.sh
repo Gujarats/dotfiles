@@ -22,11 +22,6 @@ nix-env -iA \
 	nixpkgs.direnv \
     nixpkgs.nodePackages.npm
 
-# stow dotfiles
-stow kitty
-stow nvim
-stow switchControl
-
 # add zsh as a login shell
 command -v zsh | sudo tee -a /etc/shells
 
@@ -56,3 +51,8 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vund
 
 # Use kitty terminal on MacOS
 [ `uname -s` = 'Darwin' ] && stow kitty
+
+# stow dotfiles
+stow kitty
+stow nvim
+stow switchControl
