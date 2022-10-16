@@ -201,7 +201,6 @@ set tm=500
 "
 " Colors & Fonts
 "
-syntax on
 set background=dark
 colorscheme gruvbox
 
