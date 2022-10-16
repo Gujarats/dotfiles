@@ -1,3 +1,5 @@
+# ingore error continue command until finish
+set -e
 # install nix
 curl -L https://nixos.org/nix/install | sh
 
@@ -20,7 +22,6 @@ nix-env -iA \
 	nixpkgs.direnv
     nixpkgs.nodePackages.npm
 
-set -e
 # stow dotfiles
 stow kitty
 stow nvim
