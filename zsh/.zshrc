@@ -23,6 +23,7 @@ export BAT_THEME="gruvbox-dark"
 # nix
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi
 
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -34,8 +35,6 @@ export NVM_DIR="$HOME/.nvm"
 # >>> Terminal theme begin <<< 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-# Theme terminal
-ZSH_THEME="powerlevel10k/powerlevel10k"
 # plugin
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
