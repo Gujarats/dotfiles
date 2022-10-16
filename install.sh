@@ -20,6 +20,7 @@ nix-env -iA \
 	nixpkgs.direnv
     nixpkgs.nodePackages.npm
 
+set -e
 # stow dotfiles
 stow kitty
 stow nvim
@@ -34,10 +35,13 @@ sudo chsh -s $(which zsh) $USER
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+rm -rf ~/.zshrc
+rm -rf ~/.zshrc_plugins.txt
 stow zsh
 
 # install tmux plugin manager and its config
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+rm -rf ~/.tmux.conf
 stow tmux
 
 # install vundle nvim plugin manager
