@@ -18,6 +18,7 @@ nix-env -iA \
 	nixpkgs.gnumake \
 	nixpkgs.gcc \
 	nixpkgs.direnv
+    nixpkgs.nodePackages.npm
 
 # stow dotfiles
 stow kitty
