@@ -61,6 +61,8 @@ alias tprod-gmf='awsudo -u gmf-prod_admin -- terraform'
 alias tprod='awsudo -u usr-prod_admin -- terraform'
 alias postman='~/postman/app/Postman >/dev/null 2>&1 &'
 alias datagrip='~/datagrip/bin/datagrip.sh  >/dev/null 2>&1 &'
+#idea java
+alias idea='~/idea/bin/idea.sh >/dev/null 2>&1 &'
 
 alias ssmstginstances="awsudo -u usr-stg_deployer -- aws ec2 describe-instances --output table --query 'Reservations[].Instances[].[Tags[?Key==\`Name\`] | [0].Value, State.Name, InstanceId, ImageId]'"
 alias ssmprodinstances="awsudo -u usr-prod_admin -- aws ec2 describe-instances --output table --query 'Reservations[].Instances[].[Tags[?Key==\`Name\`] | [0].Value, State.Name, InstanceId, ImageId]'"
