@@ -10,6 +10,19 @@ imap uu _<Esc>mza<C-Right><Esc>bg~iw`zi<Del>
 "delete previous word
 imap <leader>d _<Esc>vbdi
 
+" copy paste with new line
+:nmap p :pu<CR>
+" copy from the end of the line
+:nmap Y $v^y
+
+" changing between pane due due MacOs Command key
+:nmap <leader>d <C-w>j
+:nmap <leader>a <C-w>h
+:nmap <leader>s <C-w>k
+:nmap <leader>f <C-w>l
+:nmap <leader>v <C-v>
+
+
 "================================================================================================
 "Quick command
 "================================================================================================
@@ -25,42 +38,6 @@ map <F3> :VTerm<CR>
 "================================================================================================
 "================================================================================================
 
-"================================================================================================
-"PHP CONFIGUARATION
-"================================================================================================
-"
-"php sintax checking
-map <F5> :!php -l %<CR>
-
-" A standard type: PEAR, PHPCS, PSR1, PSR2, Squiz and Zend
-let g:phpfmt_standard = 'PSR2'
-let g:phpfmt_command = '/usr/bin/phpcbf'
-let g:phpfmt_tmp_dir = '/tmp/phpcbf_fold'
-
-" Don't run messdetector on save (default = 1)
-let g:phpqa_messdetector_autorun = 0
-
-" Don't run codesniffer on save (default = 1)
-let g:phpqa_codesniffer_autorun = 0
-
-"key map vphpw PHPWRAPER
-let g:vphpw_use_default_mapping = 1
-let b:vphpw_use_default_mapping = 1
-
-"dont run php auto format on save instead using :PhpFmt
-let g:phpfmt_autosave = 0
-
-"auto import use class
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-autocmd FileType php inoremap <Leader>i <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>i :call PhpInsertUse()<CR>
-
-
-"================================================================================================
-"================================================================================================
 
 "================================================================================================
 "GO CONFIGURATION
@@ -95,60 +72,35 @@ let g:go_highlight_build_constraints = 1
 "VUNDLE CONFIGURATION & PLUGINS
 "================================================================================================
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
 " plugin on GitHub repo
+Plugin 'morhetz/gruvbox'
+Plugin 'folke/tokyonight.nvim' 
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'valloric/youcompleteme'
 Plugin 'yggdroot/indentline'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mileszs/ack.vim'
+Plugin 'sainnhe/gruvbox-material' "theme color
+
 
 "GO Language
 Plugin 'fatih/vim-go'
 Plugin 'nsf/gocode', {'rtp': 'nvim/'}
 
-"tags
-"Plugin 'xolox/vim-misc'
-"Plugin 'xolox/vim-easytags'
-
 "terminal
 Plugin 'gujarats/split-term.vim'
-
-"PHP LANGUAGE
-Plugin 'StanAngeloff/php.vim' "sintaks highlighting
-Plugin 'joonty/vim-phpqa.git' "Check sintaks error and in phpcs phpms
-Plugin 'beanworks/vim-phpfmt' "auto format the coding writings standard
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'diepm/vim-php-wrapper'
-Bundle 'arnaud-lb/vim-php-namespace'
 
 "fancy statusline
 Plugin 'vim-airline/vim-airline-themes' " themes for vim-airline
 Plugin 'vim-airline/vim-airline' 
-
-Plugin 'chriskempson/base16-vim' "theme color
-
-" html / templates
-"Plugin 'mattn/emmet-vim', { 'for': 'html' } " emmet support for vim - easily create markdup wth CSS-like syntax
-"Plugin 'gregsexton/MatchTag', { 'for': 'html' } " match tags in html, similar to paren support
-"Plugin 'othree/html5.vim', { 'for': 'html' } " html5 support
-"Plugin 'mustache/vim-mustache-handlebars' " mustach support
-"Plugin 'digitaltoad/vim-jade', { 'for': ['jade', 'pug'] } " jade support
-
-" JavaScript
-"Plugin 'gavocanov/vim-js-indent', { 'for': 'javascript' } " JavaScript indent support
-"Plugin 'moll/vim-node', { 'for': 'javascript' } " node support
-"Plugin 'othree/yajs.vim', { 'for': 'javascript' } " JavaScript syntax plugin
-"Plugin 'othree/es.next.syntax.vim', { 'for': 'javascript' } " ES6 and beyond syntax
-"Plugin 'mxw/vim-jsx', { 'for': ['jsx', 'javascript'] } " JSX support
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -187,17 +139,11 @@ filetype off                  " required
 "showing hidden files
 let NERDTreeShowHidden=1
 
-set ruler         " show the cursor position all the time
-
 "make vim-airline shows up when open single file
 set laststatus=2
 
 "python 
 let g:python_host_prog  = '/usr/bin/python'
-
-"highlight cusor
-set cursorline
-set cursorcolumn
 
 set history=700
 
@@ -218,21 +164,12 @@ set so=7
 " Turn on wild menu
 set wildmenu
 
-
-" Show current position
-set ruler
-
 " Command bar height
 set cmdheight=2
 
 " Configure backspace
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
-
-" Enable mouse
-if has('mouse')
-  set mouse=a
-endif
 
 " Ignore case when searching
 set ignorecase
@@ -264,22 +201,12 @@ set tm=500
 "
 " Colors & Fonts
 "
-syntax on
-let g:solarized_termcolors=256
-let g:molokai_original = 1
-set t_Co=256 
 set background=dark
-"colorscheme solarized 
-
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-
-
+colorscheme gruvbox
 
 " Display line numbers
 set number
+set numberwidth=1
 
 " Utf8 standard encoding
 set encoding=utf8
@@ -287,10 +214,11 @@ set encoding=utf8
 "
 " Files, backup & undo
 "
-
 set nobackup
 set nowb
 set noswapfile
+set undodir=~/.config/nvim/undodir
+set undofile
 
 "
 " Text, tab & indentation
@@ -318,3 +246,4 @@ set si
 
 " Wrap long lines
 set wrap
+
