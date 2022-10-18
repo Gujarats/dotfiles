@@ -66,7 +66,7 @@ packer.startup(function(use)
   use 'gujarats/split-term.vim'
   
   --fancy statusline
-  use 'vim-airline/vim-airline-themes'
-  use 'vim-airline/vim-airline' 
+  --use 'vim-airline/vim-airline-themes'
+  --use 'vim-airline/vim-airline' 
 end)
 

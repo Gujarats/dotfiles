@@ -1,8 +1,8 @@
 print('lua.init loaded')
 require('gujarats.base')
 require('gujarats.highlights')
-require('gujarats.plugins')
 require('gujarats.maps')
+require('gujarats.plugins')
 
 local has = vim.fn.has
 local is_mac = has "macunix"
@@ -17,3 +17,5 @@ end
 
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
+
+vim.g.NERDTreeShowHidden=1
