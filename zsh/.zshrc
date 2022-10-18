@@ -45,6 +45,13 @@ if [ -d "$HOME/.nix-profile/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+# Java 
+JAVA_HOME=$HOME/jdk-1.8/bin
+export JAVA_HOME
+PATH=$PATH:$JAVA_HOME
+export PATH
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
 # >>> personal alias <<<
 alias ll='ls -la'
 #list local user
@@ -95,6 +102,16 @@ alias git-rev='git rev-list --count HEAD ^master'
 # GMF services
 alias gmftrax-stg='ssmstginstances-gmf | grep gmftrax'
 alias gmftrax-prod='ssmprodinstances-gmf | grep gmftrax'
+alias gmfpapi-stg='ssmstginstances-gmf | grep gmfpapi'
+alias gmfpapi-prod='ssmprodinstances-gmf | grep gmftrax'
+alias gmftool-stg='ssmstginstances-gmf | grep gmftool'
+alias gmftool-prod='ssmprodinstances-gmf | grep gmftool'
+alias gmfdata-stg='ssmstginstances-gmf | grep gmfdata'
+alias gmfdata-prod='ssmprodinstances-gmf | grep gmfdata'
+alias gmfref-stg='ssmstginstances-gmf | grep gmfref'
+alias gmfref-prod='ssmprodinstances-gmf | grep gmfref'
+alias gmfmis-stg='ssmstginstances-gmf | grep gmfmis'
+alias gmfmis-prod='ssmprodinstances-gmf | grep gmfmis'
 
 export PATH="$HOME/.tfenv/bin:$PATH"
 export PATH="$(python3 -m site --user-base)/bin:${PATH}"
