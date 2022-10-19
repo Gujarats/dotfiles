@@ -10,10 +10,7 @@ keymap.set('n', '-', '<C-x>')
 keymap.set('n', 'dw', 'vb"_d')
 
 -- Select all
---keymap.set('n', '<C-a>', 'gg<S-v>G')
-
--- Save with root permission (not working for now)
---vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
+keymap.set('n', '<C-a>', 'gg<S-v>G')
 
 -- New tab
 keymap.set('n', 'te', ':tabedit')
@@ -29,4 +26,13 @@ keymap.set('', 'sl', '<C-w>l')
 
 keymap.set('n', '<F2>', ':NERDTreeToggle<CR>')
 keymap.set('n', '<F3>', ':VTerm<CR>')
+
+-- tab keymap
+keymap.set('n','<leader>1','1gt')
+keymap.set('n','<leader>2','2gt')
+keymap.set('n','<leader>3','3gt')
+keymap.set('n','<leader>4','4gt')
+keymap.set('n','<leader>5','5gt')
+keymap.set('n','<leader>6','6gt')
+keymap.set('n','<leader>7','7gt')
 
