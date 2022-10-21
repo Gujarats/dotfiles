@@ -8,7 +8,8 @@ vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
-  ----use 'nvim-lualine/lualine.nvim' -- Statusline
+  use 'nvim-lualine/lualine.nvim' -- Statusline
+  
   --use 'nvim-lua/plenary.nvim' -- Common utilities
   ----use 'onsails/lspkind-nvim' -- vscode-like pictograms
   --use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
@@ -63,9 +64,6 @@ packer.startup(function(use)
   
   --terminal
   use 'gujarats/split-term.vim'
-  
-  --fancy statusline
-  use 'vim-airline/vim-airline-themes'
-  use 'vim-airline/vim-airline' 
+  use 'ryanoasis/vim-devicons'
 end)
 

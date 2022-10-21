@@ -51,6 +51,7 @@ alias ll='ls -la'
 alias list_users='cut -d: -f1 /etc/passwd'
 alias pret='git log --pretty=oneline'
 alias pret-guj='git log --pretty=oneline --author=gujarat'
+alias vim='nvim'
 
 # traveloka
 alias saml='aws-google-auth --profile saml'
