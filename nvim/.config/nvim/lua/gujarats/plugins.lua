@@ -37,7 +37,7 @@ packer.startup(function(use)
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
-  use 'norcalli/nvim-colorizer.lua'
+  use 'norcalli/nvim-colorizer.lua' -- shows color code
   use 'folke/zen-mode.nvim'
   use({
     "iamcco/markdown-preview.nvim",
@@ -57,8 +57,8 @@ packer.startup(function(use)
   use 'Xuyuanp/nerdtree-git-plugin'
   use 'airblade/vim-gitgutter'
   use 'yggdroot/indentline'
-  use 'jiangmiao/auto-pairs'
-  use 'mileszs/ack.vim'
+  --use 'jiangmiao/auto-pairs'
+  --use 'mileszs/ack.vim'
   use 'sainnhe/gruvbox-material'
 
   --GO Language
