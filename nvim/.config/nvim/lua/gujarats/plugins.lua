@@ -57,16 +57,16 @@ packer.startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
   use 'Numkil/ag.nvim'
-
+  use 'ryanoasis/vim-devicons'
 
   -- my personal plugin
   use 'morhetz/gruvbox'
   use 'folke/tokyonight.nvim'
-  use 'tpope/vim-fugitive'
+  --use 'tpope/vim-fugitive'
   --use 'scrooloose/nerdtree'
   --use 'Xuyuanp/nerdtree-git-plugin'
-  use 'airblade/vim-gitgutter'
-  use 'yggdroot/indentline'
+  --use 'airblade/vim-gitgutter'
+  --use 'yggdroot/indentline'
   --use 'jiangmiao/auto-pairs'
   --use 'mileszs/ack.vim'
   use 'sainnhe/gruvbox-material'
@@ -77,5 +77,4 @@ packer.startup(function(use)
 
   --terminal
   use 'gujarats/split-term.vim'
-  use 'ryanoasis/vim-devicons'
 end)

@@ -20,6 +20,10 @@ keymap.set('', 'sh', '<C-w>h')
 keymap.set('', 'sk', '<C-w>k')
 keymap.set('', 'sj', '<C-w>j')
 keymap.set('', 'sl', '<C-w>l')
+keymap.set('', 's', '') -- override s to do nothing
+
+--copy current row
+keymap.set('n', 'Y', '<Esc>^v$y')
 
 vim.keymap.set('n', '<F2>', '<Cmd>NvimTreeToggle<CR>', {})
 --keymap.set('n', '<F3>', ':VTerm<CR>')
@@ -30,3 +34,9 @@ vim.keymap.set('n', '<F2>', '<Cmd>NvimTreeToggle<CR>', {})
 --keymap.set("n", "<leader>f", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 --keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 --keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
+
+-- GitSigns
+keymap.set("n", "]n", "<cmd>Gitsigns next_hunk<cr>") -- go to next changes git
+--keymap.set("n", "]p", "<cmd>Gitsigns prev_hunk<cr>") -- go to previous changes git // Comment for now due to p use for paste
+keymap.set("n", "]u", "<cmd>Gitsigns reset_hunk<cr>") -- undo changes current lines git
+keymap.set("n", "]U", "<cmd>Gitsigns reset_buffer<cr>") -- undo changes whole buffer / current open file
