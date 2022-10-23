@@ -6,8 +6,8 @@ vim.g.loaded_netrwPlugin = 1
 
 require('gujarats.base')
 require('gujarats.highlights')
-require('gujarats.maps')
 require('gujarats.plugins')
+require('gujarats.maps')
 
 local has = vim.fn.has
 local is_mac = has "macunix"
@@ -19,6 +19,3 @@ end
 if is_win then
   require('gujarats.windows')
 end
-
-vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
