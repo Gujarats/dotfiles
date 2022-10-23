@@ -1,4 +1,8 @@
 print('lua.init loaded')
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 require('gujarats.base')
 require('gujarats.highlights')
 require('gujarats.maps')
@@ -17,5 +21,3 @@ end
 
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
-
-vim.g.NERDTreeShowHidden=1

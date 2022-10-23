@@ -21,15 +21,12 @@ keymap.set('', 'sk', '<C-w>k')
 keymap.set('', 'sj', '<C-w>j')
 keymap.set('', 'sl', '<C-w>l')
 
-keymap.set('n', '<F2>', ':NERDTreeToggle<CR>')
-keymap.set('n', '<F3>', ':VTerm<CR>')
+vim.keymap.set('n', '<F2>', '<Cmd>NvimTreeToggle<CR>', {})
+--keymap.set('n', '<F3>', ':VTerm<CR>')
 
--- tab keymap
-keymap.set('n','<leader>1','1gt')
-keymap.set('n','<leader>2','2gt')
-keymap.set('n','<leader>3','3gt')
-keymap.set('n','<leader>4','4gt')
-keymap.set('n','<leader>5','5gt')
-keymap.set('n','<leader>6','6gt')
-keymap.set('n','<leader>7','7gt')
-
+-- telescope ignroe command for rerence in the futrue
+--keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
+--keymap.set("n", "<leader>f", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
+--keymap.set("n", "<leader>f", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
+--keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
+--keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
