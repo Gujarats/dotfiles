@@ -5,6 +5,9 @@ I used this setup for my daily usage
 reference : https://nixos.org
 just run `install.sh` and make sure everything is run smoothly
 
+### stow as dotfiles mangager
+reference documentation : https://www.gnu.org/software/stow/manual/stow.html#Installing-Packages
+
 ### NVIM Reference on how the plugins to work plug
 https://www.youtube.com/watch?v=ajmK0ZNcM4Q
 
@@ -25,10 +28,9 @@ brew install the_silver_searcher
 https://github.com/ggreer/the_silver_searcher#linux
 ```
 
-
 ## Font and Icon
 to use font and Icon showing in the nvim please install the font
 https://www.nerdfonts.com/font-downloads
- - download and install the fonts
+ - download and install the fonts (select nerd-hack-fonts)
  - set the font in the terminal using preference/setting profile
 
