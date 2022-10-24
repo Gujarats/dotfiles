@@ -1,5 +1,5 @@
-print('windows copas loaded')
-vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
+print('linux copas loaded')
+vim.opt.clipboard:append { 'unnamedplus' }
 vim.g.clipboard = {
   name = 'wsl clipboard',
   copy =  { ["+"] = { "clip.exe" },   ["*"] = { "clip.exe" } },
