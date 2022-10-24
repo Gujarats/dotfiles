@@ -45,13 +45,20 @@ if [ -d "$HOME/.nix-profile/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+# Java
+JAVA_HOME=$HOME/jdk-1.8/bin
+export JAVA_HOME
+PATH=$PATH:$JAVA_HOME
+export PATH
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
 # >>> personal alias <<<
 alias ll='ls -la'
 #list local user
 alias list_users='cut -d: -f1 /etc/passwd'
 alias pret='git log --pretty=oneline'
 alias pret-guj='git log --pretty=oneline --author=gujarat'
-alias vim='nvim'
+alias vim='nvim' # use nvim instead
 
 # traveloka
 alias saml='aws-google-auth --profile saml'
@@ -82,8 +89,8 @@ alias ssmprod='awsudo -u usr-prod_admin -- aws ssm start-session --target '
 
 alias ssmprod-usr='awsudo -u usr-prod_admin -- aws ssm start-session --target '
 alias gsts='/usr/local/bin/gsts'
-alias awsgsts='$(cat ~/Documents/credentials/awsgsts.txt)'
-alias awsgstsloop='$(cat ~/Documents/credentials/awsgstsloop.txt)'
+alias awsgsts='source $HOME/Documents/credentials/awsgsts.sh'
+alias awsgstsloop='source $HOME/Documents/credentials/awsgstsloop.sh'
 alias pret-guj='git log --author=gujarat --pretty=oneline'
 alias pret='git log --pretty=oneline'
 alias deploy-gmf='./scripts/deploy.sh --skip-test true -r gmf-stg_admin -s'
@@ -96,6 +103,20 @@ alias git-rev='git rev-list --count HEAD ^master'
 # GMF services
 alias gmftrax-stg='ssmstginstances-gmf | grep gmftrax'
 alias gmftrax-prod='ssmprodinstances-gmf | grep gmftrax'
+alias gmfpapi-stg='ssmstginstances-gmf | grep gmfpapi'
+alias gmfpapi-prod='ssmprodinstances-gmf | grep gmftrax'
+alias gmftool-stg='ssmstginstances-gmf | grep gmftool'
+alias gmftool-prod='ssmprodinstances-gmf | grep gmftool'
+alias gmfdata-stg='ssmstginstances-gmf | grep gmfdata'
+alias gmfdata-prod='ssmprodinstances-gmf | grep gmfdata'
+alias gmfref-stg='ssmstginstances-gmf | grep gmfref'
+alias gmfref-prod='ssmprodinstances-gmf | grep gmfref'
+alias gmfmis-stg='ssmstginstances-gmf | grep gmfmis'
+alias gmfmis-prod='ssmprodinstances-gmf | grep gmfmis'
+# GMF rollback script
+# make sure in the project dir
+alias rollback-gmf-stg='./scripts/rollback.sh -r gmf-stg_admin -s <service_name> --ami-id <ami_id>'
+
 
 export PATH="$HOME/.tfenv/bin:$PATH"
 export PATH="$(python3 -m site --user-base)/bin:${PATH}"
