@@ -58,6 +58,7 @@ alias ll='ls -la'
 alias list_users='cut -d: -f1 /etc/passwd'
 alias pret='git log --pretty=oneline'
 alias pret-guj='git log --pretty=oneline --author=gujarat'
+alias vim='nvim' # use nvim instead
 
 # traveloka
 alias saml='aws-google-auth --profile saml'
@@ -112,6 +113,10 @@ alias gmfref-stg='ssmstginstances-gmf | grep gmfref'
 alias gmfref-prod='ssmprodinstances-gmf | grep gmfref'
 alias gmfmis-stg='ssmstginstances-gmf | grep gmfmis'
 alias gmfmis-prod='ssmprodinstances-gmf | grep gmfmis'
+# GMF rollback script
+# make sure in the project dir
+alias rollback-gmf-stg='./scripts/rollback.sh -r gmf-stg_admin -s <service_name> --ami-id <ami_id>'
+
 
 export PATH="$HOME/.tfenv/bin:$PATH"
 export PATH="$(python3 -m site --user-base)/bin:${PATH}"
