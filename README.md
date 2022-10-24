@@ -28,6 +28,19 @@ brew install the_silver_searcher
 https://github.com/ggreer/the_silver_searcher#linux
 ```
 
+install nvm
+https://github.com/nvm-sh/nvm#installing-and-updating
+``` shell
+after install nvm
+nvm install 16.18.0
+```
+
+install tree-sitter
+```shell
+npm isntall -g tree-sitter-cli
+```
+
+
 ## Font and Icon
 to use font and Icon showing in the nvim please install the font
 https://www.nerdfonts.com/font-downloads
