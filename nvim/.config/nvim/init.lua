@@ -16,10 +16,10 @@ local is_win = has "win32"
 if is_mac then
   require('gujarats.macos')
 end
-if is_win then
-  print('is win check')
-  require('gujarats.windows')
-else
-  print('is linux check')
-  require('gujarats.linux')
-end
+--if is_win then
+--	print('is win check')
+--	require('gujarats.windows')
+--else
+--	print('is linux check')
+--	require('gujarats.linux')
+--end

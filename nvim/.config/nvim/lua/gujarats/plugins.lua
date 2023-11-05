@@ -13,11 +13,11 @@ packer.startup(function(use)
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
   use 'nvim-lualine/lualine.nvim' -- Statusline
-  use 'nvim-lua/plenary.nvim' -- Common utilities
-  use 'onsails/lspkind-nvim' -- vscode-like pictograms
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-  use 'hrsh7th/nvim-cmp' -- Completion
+  use 'nvim-lua/plenary.nvim'    -- Common utilities
+  use 'onsails/lspkind-nvim'     -- vscode-like pictograms
+  use 'hrsh7th/cmp-buffer'       -- nvim-cmp source for buffer words
+  use 'hrsh7th/cmp-nvim-lsp'     -- nvim-cmp source for neovim's built-in LSP
+  use 'hrsh7th/nvim-cmp'         -- Completion
   use {
     "williamboman/nvim-lsp-installer",
     "neovim/nvim-lspconfig",
@@ -32,7 +32,7 @@ packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
-  use 'kyazdani42/nvim-web-devicons' -- File icons
+  use 'kyazdani42/nvim-web-devicons'                       -- File icons
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use { "nvim-telescope/telescope.nvim", branch = "0.1.x" } -- fuzzy finder
   use 'nvim-telescope/telescope-file-browser.nvim'
@@ -54,26 +54,14 @@ packer.startup(function(use)
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    tag = 'nightly'               -- optional, updated every week. (see issue #1193)
   }
-  use 'Numkil/ag.nvim'
   use 'ryanoasis/vim-devicons'
 
   -- my personal plugin
   use 'morhetz/gruvbox'
   use 'folke/tokyonight.nvim'
-  --use 'tpope/vim-fugitive'
-  --use 'scrooloose/nerdtree'
-  --use 'Xuyuanp/nerdtree-git-plugin'
-  --use 'airblade/vim-gitgutter'
-  --use 'yggdroot/indentline'
-  --use 'jiangmiao/auto-pairs'
-  --use 'mileszs/ack.vim'
   use 'sainnhe/gruvbox-material'
-
-  --GO Language
-  use 'fatih/vim-go'
-  --use 'nsf/gocode', {'rtp': 'nvim/'}
 
   --terminal
   use 'gujarats/split-term.vim'
