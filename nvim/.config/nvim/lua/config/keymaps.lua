@@ -3,7 +3,7 @@
 -- Add any additional keymaps here
 
 local keymap = vim.keymap
-local opst = { noremap = true, silent = true }
+local opts = { noremap = true, silent = true }
 
 keymap.set("n", "x", '"_x')
 
@@ -17,7 +17,7 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 -- New tab
 keymap.set("n", "te", ":tabedit")
 keymap.set("n", "<tab>", ":tabnext<Return>", opts)
-keymap.set("n", "<s-tab>", ":tabnext<Return>", opts)
+keymap.set("n", "<s-tab>", ":tabprevious<Return>", opts)
 
 -- Split window
 keymap.set("n", "ss", ":split<Return><C-w>w")
