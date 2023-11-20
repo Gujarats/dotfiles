@@ -1,4 +1,4 @@
-# Vim setup editor setup using vim and tmux
+# Vim (Neo Vim), tmux, shell setup
 I used this setup for my daily usage
 
 ## Installation 
