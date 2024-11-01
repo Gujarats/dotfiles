@@ -120,3 +120,16 @@ alias rollback-gmf-stg='./scripts/rollback.sh -r gmf-stg_admin -s <service_name>
 
 export PATH="$HOME/.tfenv/bin:$PATH"
 export PATH="$(python3 -m site --user-base)/bin:${PATH}"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+#Jekyll ENV
+export ENV_JEKYLL_BASE_URL="https://gujarats.github.io/"
+
+#go versionin
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
+
