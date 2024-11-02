@@ -2,6 +2,8 @@
 require("config.lazy")
 vim.cmd("Copilot disable")
 
+-- to search text within the project root dir
+-- however .git is still included even though the command specify it is excluded
 require("telescope").setup({
   pickers = {
     find_files = {
