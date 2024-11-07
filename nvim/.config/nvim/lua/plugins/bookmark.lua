@@ -1,9 +1,6 @@
 return {
   {
-    "crusj/bookmarks.nvim",
-    keys = {
-      { "<tab><tab>", mode = { "n" } },
-    },
+    "gujarats/bookmarks.nvim",
     branch = "main",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
