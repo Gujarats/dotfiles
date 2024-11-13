@@ -1,11 +1,18 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
-function DetectGoHtmlTmpl()
+
+local function IsGoHtml()
   if vim.fn.expand("%:e") == "html" and vim.fn.search("{{") ~= 0 then
+    return true
+  end
+  return false
+end
+
+local function DetectGoHtmlTmpl()
+  if IsGoHtml() then
     vim.treesitter.language.register("html", { "gohtml", "gohtmltmpl" })
     vim.o.filetype = "gohtml"
-  elseif vim.fn.expand("%:e") == "html" then
   end
 end
 
