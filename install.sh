@@ -8,19 +8,19 @@ curl -L https://nixos.org/nix/install | sh
 
 # install packages
 nix-env -iA \
-	nixpkgs.zsh \
-	nixpkgs.git \
-	nixpkgs.neovim \
-	nixpkgs.tmux \
-	nixpkgs.stow \
-	nixpkgs.yarn \
-	nixpkgs.fzf \
-	nixpkgs.ripgrep \
-	nixpkgs.bat \
-	nixpkgs.gnumake \
-	nixpkgs.gcc \
-	nixpkgs.direnv \
-    nixpkgs.nodePackages.npm
+  nixpkgs.zsh \
+  nixpkgs.git \
+  nixpkgs.neovim \
+  nixpkgs.tmux \
+  nixpkgs.stow \
+  nixpkgs.yarn \
+  nixpkgs.fzf \
+  nixpkgs.ripgrep \
+  nixpkgs.bat \
+  nixpkgs.gnumake \
+  nixpkgs.gcc \
+  nixpkgs.direnv \
+  nixpkgs.nodePackages.npm
 
 # add zsh as a login shell
 command -v zsh | sudo tee -a /etc/shells
@@ -49,14 +49,14 @@ stow tmux
 # install vundle nvim plugin manager
 #git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 #Packer nvim plguin manager
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # Use kitty terminal on MacOS
-[ `uname -s` = 'Darwin' ] && stow kitty
+[ $(uname -s) = 'Darwin' ] && stow kitty
 
 # stow dotfiles
 stow kitty
 stow nvim
 stow switchControl
 stow vscodevimrc
+stow gitconfig
