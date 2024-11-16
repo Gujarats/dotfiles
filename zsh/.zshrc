@@ -135,3 +135,7 @@ export PATH="$PATH:$GOPATH/bin"
 
 # override goenv
 export PATH=$PATH:/usr/local/go/bin
+
+#dart-sass
+export PATH=$PATH:/usr/local/dart-sass/
+
