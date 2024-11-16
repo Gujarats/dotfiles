@@ -126,10 +126,12 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 #Jekyll ENV
 export ENV_JEKYLL_BASE_URL="https://gujarats.github.io/"
 
-#go versionin
+#go versioning
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
 export PATH="$GOROOT/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
 
+# override goenv
+export PATH=$PATH:/usr/local/go/bin
