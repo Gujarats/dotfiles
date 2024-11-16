@@ -17,3 +17,19 @@ require("telescope").setup({
     },
   },
 })
+
+
+local clip = "/mnt/c/Windows/System32/clip.exe"
+if vim.fn.executable(clip) then
+  local opts = {
+    callback = function()
+      if vim.v.event.operator ~= "y" then
+        return
+      end
+      vim.fn.system(clip, vim.fn.getreg(0))
+    end
+  }
+
+  opts.group = vim.api.nvim_create_augroup("WSLYang", {})
+  vim.api.nvim_create_autocmd("TextYankPost", { group = opts.group, callback = opts.callback })
+end
