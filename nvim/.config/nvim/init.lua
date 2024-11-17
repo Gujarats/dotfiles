@@ -1,6 +1,5 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
-vim.cmd("Copilot disable")
 
 -- to search text within the project root dir
 -- however .git is still included even though the command specify it is excluded
@@ -18,7 +17,6 @@ require("telescope").setup({
   },
 })
 
-
 local clip = "/mnt/c/Windows/System32/clip.exe"
 if vim.fn.executable(clip) then
   local opts = {
@@ -27,7 +25,7 @@ if vim.fn.executable(clip) then
         return
       end
       vim.fn.system(clip, vim.fn.getreg(0))
-    end
+    end,
   }
 
   opts.group = vim.api.nvim_create_augroup("WSLYang", {})
