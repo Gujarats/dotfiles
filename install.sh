@@ -49,7 +49,7 @@ stow tmux
 # install vundle nvim plugin manager
 #git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 #Packer nvim plguin manager
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+#git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # Use kitty terminal on MacOS
 [ $(uname -s) = 'Darwin' ] && stow kitty
