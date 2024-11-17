@@ -2,6 +2,7 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- TODO: figure out where to put these gohtml detection somewhere
 local function IsGoHtml()
   if vim.fn.expand("%:e") == "html" and vim.fn.search("{{") ~= 0 then
     return true
