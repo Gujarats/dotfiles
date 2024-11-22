@@ -126,16 +126,12 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 #Jekyll ENV
 export ENV_JEKYLL_BASE_URL="https://gujarats.github.io/"
 
-#go versioning
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
-export PATH="$GOROOT/bin:$PATH"
-export PATH="$PATH:$GOPATH/bin"
-
-# override goenv
+# go path
 export PATH=$PATH:/usr/local/go/bin
 
 #dart-sass
 export PATH=$PATH:/usr/local/dart-sass/
+
+#hvm hugo version manager
+export PATH=$PATH:$HOME/.cache/hvm/default
 
