@@ -128,6 +128,8 @@ export ENV_JEKYLL_BASE_URL="https://gujarats.github.io/"
 
 # go path
 export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go/
+export PATH=$PATH:$GOPATH/bin
 
 #dart-sass
 export PATH=$PATH:/usr/local/dart-sass/
