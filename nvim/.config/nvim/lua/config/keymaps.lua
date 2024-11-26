@@ -33,8 +33,8 @@ keymap.set("", "s", "") -- override s to do nothing
 --copy current row
 keymap.set("n", "Y", "<Esc>^v$y")
 
-vim.keymap.set("n", "<F2>", "<Cmd>NvimTreeToggle<CR>", {})
---keymap.set('n', '<F3>', ':VTerm<CR>')
+--vim.keymap.set("n", "<F2>", "<Cmd>NvimTreeToggle<CR>", {})
+--keymap.set("n", "<F3>", ":VTerm<CR>")
 
 -- telescope ignroe command for rerence in the futrue
 --keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
@@ -48,3 +48,15 @@ keymap.set("n", "]n", "<cmd>Gitsigns next_hunk<cr>") -- go to next changes git
 --keymap.set("n", "]p", "<cmd>Gitsigns prev_hunk<cr>") -- go to previous changes git // Comment for now due to p use for paste
 keymap.set("n", "]u", "<cmd>Gitsigns reset_hunk<cr>") -- undo changes current lines git
 keymap.set("n", "]U", "<cmd>Gitsigns reset_buffer<cr>") -- undo changes whole buffer / current open file
+
+--my-local-plugins
+keymap.set("n", "\\sp", function()
+  require("gujarats.file").print_full_path()
+end, { expr = true, desc = "print the current buffer file path" })
+
+--    vim.keymapp.set("n", "\\sb", function()
+--      require("gujarats.go").go_build_copen()
+--    end, { buffer = true, desc = "Go build" })
+--    vim.keymap.set("n", "\\sr", function()
+--      require("gujarats.go").go_build_copen()
+--    end, { buffer = true, desc = "Go run" })

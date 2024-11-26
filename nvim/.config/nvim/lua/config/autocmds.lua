@@ -10,3 +10,16 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.wo.conceallevel = 0
   end,
 })
+
+-- Keymap for Go files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "go" }, -- Trigger only for Go files
+  callback = function()
+    vim.keymap.set("n", "\\sb", function()
+      require("gujarats.go").go_build_copen()
+    end, { buffer = true, desc = "Go build" })
+    vim.keymap.set("n", "\\sr", function()
+      require("gujarats.go").go_build_copen()
+    end, { buffer = true, desc = "Go run" })
+  end,
+})
