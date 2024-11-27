@@ -21,5 +21,8 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", "\\sr", function()
       require("gujarats.go").go_run()
     end, { buffer = true, desc = "Go run" })
+    vim.keymap.set("n", "\\st", function()
+      require("gujarats.go").go_test()
+    end)
   end,
 })
