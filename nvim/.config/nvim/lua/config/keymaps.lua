@@ -53,10 +53,3 @@ keymap.set("n", "]U", "<cmd>Gitsigns reset_buffer<cr>") -- undo changes whole bu
 keymap.set("n", "\\sp", function()
   require("gujarats.file").print_full_path()
 end, { expr = true, desc = "print the current buffer file path" })
-
---    vim.keymapp.set("n", "\\sb", function()
---      require("gujarats.go").go_build_copen()
---    end, { buffer = true, desc = "Go build" })
---    vim.keymap.set("n", "\\sr", function()
---      require("gujarats.go").go_build_copen()
---    end, { buffer = true, desc = "Go run" })

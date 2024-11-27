@@ -1,7 +1,10 @@
+-- NOTE: using specifically zsh as shell it required to have zsh isntalled
+--change zsh to bash if do not wish to use zsh
+
 local M = {}
 
 function M.go_build()
-  local cmd = string.format("tmux split-window -v -l 10 bash -c '%s; exec bash'", "go build")
+  local cmd = string.format("tmux split-window -v -l 10 zsh -i -c '%s; exec zsh'", "go build")
   vim.fn.system(string.format(cmd))
 end
 
@@ -37,6 +40,11 @@ function M.go_build_copen()
     -- If no errors, notify the user
     vim.notify("Build succeeded!", vim.log.levels.INFO)
   end
+end
+
+function M.go_run()
+  local cmd = string.format("tmux split-window -v -l 10 zsh -i -c '%s; exec zsh'", "go run .")
+  vim.fn.system(string.format(cmd))
 end
 
 return M
