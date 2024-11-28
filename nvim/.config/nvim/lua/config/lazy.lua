@@ -56,3 +56,6 @@ require("lazy").setup({
     },
   },
 })
+
+-- my custom plugin
+require("gujarats/hugo").setup()
