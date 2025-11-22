@@ -12,3 +12,5 @@
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [merge]
 	tool = nvim
+[credential]
+	helper = store

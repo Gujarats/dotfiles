@@ -3,6 +3,9 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    build = ":TSUpdate",
+    branch = "main",
     opts = {
       ensure_installed = {
         "cmake",
@@ -46,7 +49,7 @@ return {
       },
     },
     config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+      require("nvim-treesitter.configs").setup(opts or {})
 
       -- MDX
       vim.filetype.add({
@@ -54,7 +57,6 @@ return {
           mdx = "mdx",
         },
       })
-      vim.treesitter.language.register("markdown", "mdx")
     end,
   },
 }

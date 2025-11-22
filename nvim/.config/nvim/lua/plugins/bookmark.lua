@@ -2,7 +2,10 @@ return {
   {
     "gujarats/bookmarks.nvim",
     branch = "main",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+      "nvim-telescope/telescope.nvim",
+    },
     config = function()
       local config = {
         border_style = "double", -- border style: "single", "double", "rounded"
