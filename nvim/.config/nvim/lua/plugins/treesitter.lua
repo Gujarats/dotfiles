@@ -5,9 +5,15 @@ return {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
     build = ":TSUpdate",
-    branch = "main",
     opts = {
       ensure_installed = {
+        "lua",
+        "vim",
+        "vimdoc",
+        "query",
+        "markdown",
+        "markdown_inline",
+
         "cmake",
         "cpp",
         "css",
@@ -48,15 +54,5 @@ return {
         },
       },
     },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts or {})
-
-      -- MDX
-      vim.filetype.add({
-        extension = {
-          mdx = "mdx",
-        },
-      })
-    end,
   },
 }
