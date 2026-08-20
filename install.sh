@@ -20,7 +20,7 @@ nix-env -iA \
   nixpkgs.gnumake \
   nixpkgs.gcc \
   nixpkgs.direnv \
-  nixpkgs.nodePackages.npm
+  nixpkgs.nodejs
 
 # add zsh as a login shell
 command -v zsh | sudo tee -a /etc/shells
