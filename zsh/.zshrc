@@ -137,3 +137,6 @@ export PATH=$PATH:/usr/local/dart-sass/
 #hvm hugo version manager
 export PATH=$PATH:$HOME/.cache/hvm/default
 
+
+# opencode
+export PATH=/home/gujarats/.opencode/bin:$PATH
