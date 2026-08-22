@@ -6,7 +6,6 @@ I used this setup for my daily usage
 
 reference : https://nixos.org
 just run `install.sh` and make sure everything is run smoothly -
-in my current testing it stops after installing zsh
 
 ### stow as dotfiles mangager
 
