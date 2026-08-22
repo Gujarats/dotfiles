@@ -2,11 +2,9 @@
 
 I used this setup for my daily usage
 
-## Installation (not all smoothly)
+### Manual installation
 
-reference : https://nixos.org
-just run `install.sh` and make sure everything is run smoothly -
-in my current testing it stops after installing zsh
+since install.sh is not working for other distro in thise case mint so manual should be the safest way to do it
 
 ### stow as dotfiles mangager
 
@@ -57,3 +55,9 @@ https://www.nerdfonts.com/font-downloads
 
 - download and install the fonts (select nerd-hack-fonts)
 - set the font in the terminal using preference/setting profile
+
+## Installation (not all smoothly)
+
+reference : https://nixos.org
+just run `install.sh` and make sure everything is run smoothly -
+`NOTE WORKING` in my current testing it stops after installing zsh

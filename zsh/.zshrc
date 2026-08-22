@@ -140,3 +140,5 @@ export PATH=$PATH:$HOME/.cache/hvm/default
 
 # opencode
 export PATH=/home/gujarats/.opencode/bin:$PATH
+
+if [ -e /home/tester/.nix-profile/etc/profile.d/nix.sh ]; then . /home/tester/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
